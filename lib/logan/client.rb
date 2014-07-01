@@ -80,7 +80,7 @@ module Logan
       handle_response(response, Proc.new {|h| Logan::Person.new(h) })
     end
     
-    def people(id)
+    def person(id)
       response = self.class.get "/people/#{id}.json"
       handle_response(response, Proc.new {|h| Logan::Person.new(h) })
     end
