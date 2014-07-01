@@ -79,5 +79,10 @@ module Logan
       response = self.class.get "/people.json"
       handle_response(response, Proc.new {|h| Logan::Person.new(h) })
     end
+    
+    def people(id)
+      response = self.class.get "/people/#{id}.json"
+      handle_response(response, Proc.new {|h| Logan::Person.new(h) })
+    end
   end
 end
